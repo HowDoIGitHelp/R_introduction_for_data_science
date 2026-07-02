@@ -23,7 +23,7 @@ You can think of this the same way interacting with a calculator.
 While it is mainly used for writing expressions, you can also input commands such as launching the help screen using `help()`, viewing demons using `demo()`, importing packages using `source()`, update packages using `update.packages()` and more.
 To exit the workspace, you can use the command `q()`
 
-## R-expressions
+## R-Expressions
 
 To interact with the REPL, you must write complete expressions in the prompt.
 
@@ -84,7 +84,9 @@ class(3L - 1L)
 class(5L)
 ```
 
-R also features the complex numbers using the complex datatype, expressions written with an imaginary term will interpreted as complex.
+> As it turns out, all atomic datatypes in R are vectors. Even an expression with just one value is just a vector with one element. But for now this distinction is not really important.
+
+R also features complex numbers using the complex datatype. Any expressions written with an imaginary term will be interpreted as complex.
 
 ```{code-cell} r
 class(3 + 2i)
@@ -94,7 +96,7 @@ class(3 + 2i)
 class(0i)
 ```
 
-Non-numeric types also include logicals, which can only be either `TRUE` or `FALSE`,
+Non-numeric types include logicals, which can only be either `TRUE` or `FALSE`,
 
 ```{code-cell} r
 class(TRUE)
@@ -108,7 +110,7 @@ class(FALSE)
 class(TRUE | FALSE)
 ```
 
-When writing logicals, `TRUE` or `FALSE` must be written in all-caps, otherwise R will not interpret as logicals.
+When writing logicals, `TRUE` or `FALSE` must be written in all-caps, otherwise R will not interpret them as logicals.
 
 ```{code-cell} r
 class(True)
@@ -145,8 +147,8 @@ class('{')
 ## R Objects
 
 R objects allow us to conveniently hold a piece of data in memory.
-Any type of data can be placed into an R object, all you have to do is to assign to it a valid name.
-For example we can store the number `3` into the object called `x`.
+Any type of data can be placed into an R object, all you have to do is to assign a valid name.
+For example, we can store the number `3` into the object called `x`.
 We can use the `<-` operator for this.
 
 ```{code-cell} r
@@ -183,7 +185,7 @@ x
 ```
 
 Note that when assigning or reassigning using `<-`, you use any valid object name.
-As long as the name doesn't start with a number, doesn't use the special symbols such as `+`, `-`, `*`, `/`, `^`, `$`, etc, and is not a reserved word, then it is a valid object name.
+As long as the name doesn't start with a number, doesn't use the special symbols such as `+`, `-`, `*`, `/`, `^`, `$`, etc., and is not a reserved word, then it is a valid object name.
 Also, you can store any valid expression into an object name.
 
 ```{code-cell} r

@@ -17,14 +17,14 @@ kernelspec:
 Packages are collections of libraries that contain helpful code that you can use for your own projects.
 It can contain helper functions, new classes, and more.
 Some of these packages come preloaded in R while some of them must be manually loaded.
-For example the `class` package, which contains basic classification models do not come preloaded in R.
+For example, the `class` package, which contains basic classification models do not come preloaded in R.
 To load packages like these, you need to use the `library` function.
 
 ```{code-cell} r
 library(class)
 ```
 
-To view all of the installed packages in your system you can use the following function:
+To view all the installed packages in your system you can use the following function:
 
 ```{code-cell} r
 head(installed.packages())

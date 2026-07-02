@@ -62,7 +62,7 @@ The `is.vector()` function evaluates to `TRUE` if used on a vector and `FALSE` o
 is.vector(1)
 ```
 
-You can find the sum of all of the elements of a numeric vector using `sum()`:
+You can find the sum of all the elements of a numeric vector using `sum()`:
 
 ```{code-cell} r
 sum(c(2,4,7,-1))
@@ -155,7 +155,7 @@ matrix(c(1,2,3,4,5,6), ncol = 2, byrow = TRUE)
 ```
 
 We can isolate elements of a matrix using indexing.
-Using the indexing syntax for vectors `m[i]`, you will retrieve the ith element if the matrix was unfurled into a vector by column:
+Using the indexing syntax for vectors `m[i]`, you will retrieve the `i`th element if the matrix was unfurled into a vector by column:
 
 ```{code-cell} r
 m = matrix(c(1,2,3,4,5,6), ncol = 2)
@@ -163,7 +163,7 @@ m
 ```
 
 We can also retrieve an element by specifying the row and column number.
-For example we can retrieve the element found at the 3rd row and 1st column using the following syntax:
+For example, we can retrieve the element found at the 3rd row and 1st column using the following syntax:
 
 ```{code-cell} r
 m[3,1]
@@ -187,7 +187,7 @@ m[,2]
 There are more compound types in R.
 But before we talk about other compound types, lets talk about R attributes.
 R allows us to assign metadata to any object using attributes.
-While you can use this on any valid object, it's usefulness becomes more obvious once you are working with compound classes.
+While you can use this on any valid object, its usefulness becomes more obvious once you are working with compound classes.
 
 ## `name` attribute
 
@@ -262,7 +262,7 @@ mat = matrix(c(1:6), nrow = 3)
 class(mat)
 ```
 
-In the example above, we can see that `mat` has two classes, matrix and array.
+In the example above, we can see that `mat` has two classes, matrix, and array.
 This is as expected because all matrices are arrays.
 It's out of scope for this discussion but this is an example of inheritance.
 
@@ -389,7 +389,7 @@ iris[25:30,c("Sepal.Length","Sepal.Width")]
 
 In the case of the `iris` dataset (and most datasets), row indices and row names are the same.
 
-If you are familiar with relational databases, you can perform also selections, joins, unions and intersections with data frames.
+If you are familiar with relational databases, you can perform also selections, joins, unions, and intersections with data frames.
 The example below demonstrates a selection operation (\sigma) that filters only rows that have a sepal length less than 5:
 
 ```{code-cell} r
@@ -403,9 +403,9 @@ In the example below we can find the mean of all sepal widths for all rows:
 mean(iris[,"Sepal.Width"], na.rm = TRUE)
 ```
 
-`na.rm = TRUE` is a flag that must be set to TRUE so that columns with NA values are not a automatically aggregated to NA.
+`na.rm = TRUE` is a flag that must be set to TRUE so that columns with `NA` values are not automatically aggregated to `NA`.
 
-You can combine these principles to find the mean of sepal width of species labelled as "setosa"
+You can combine these principles to find the mean of sepal width of species labeled as "setosa"
 
 ```{code-cell} r
 mean(iris[iris["Species"] == "setosa",][,"Sepal.Width"], na.rm = TRUE)

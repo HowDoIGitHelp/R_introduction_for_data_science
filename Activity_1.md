@@ -17,8 +17,8 @@
 
     $$
     \begin{aligned}
-        \text{Let } \mathbf{x} = \begin{bmatrix} x_1, x_2, x_3, \vdots x_n \end{bmatrix}\\
-        \text{Let } \mathbf{y} = \begin{bmatrix} y_1, y_2, y_3, \vdots y_n \end{bmatrix}\\
+        \text{Let } \mathbf{x} = \begin{bmatrix} x_1\\ x_2\\x_3\\ \vdots \\ x_n \end{bmatrix}\\
+        \text{Let } \mathbf{y} = \begin{bmatrix} y_1\\y_2\\ y_3 \\ \vdots\\y_n \end{bmatrix}\\
         \\
         \mathbf{x} \cdot \mathbf{y} = x_1 y_1 + x_2 y_2 + x_3 y_3 + \cdots + x_n y_n
     \end{aligned}

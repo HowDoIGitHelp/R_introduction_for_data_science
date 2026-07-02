@@ -40,8 +40,8 @@ addone_l <- function(vec) {
 ```
 
 Here, you are iterating through each element in the vector, and adding one to it.
-In R, you can perform the same calculations, in simpler and more terse way.
-When you use the operators like `+`, `*`, `-`, `/`, etc, on vectors, it will perform element-wise operations.
+In R, you can perform the same calculations, in simpler and terser way.
+When you use the operators like `+`, `*`, `-`, `/`, etc., on vectors, it will perform element-wise operations.
 This means the operation is performed on every element of the vector.
 Instead of writing `addone` the way we did above, we can simply write:
 
@@ -51,10 +51,10 @@ addone_v <- function(vec) {
 }
 ```
 
-Not only is this approach shorter, is also much much quicker.
+Not only is this approach shorter, is also much, much quicker.
 Behind the scenes of this evaluation, R performs a lot of optimizations.
-To see the speed difference, lets invoke these functions on randomly generated dataset of 100 million numbers.
-Here we are generating the data using `runif()` which generates a randomly distributed vector based on a given max and min value.
+To see the speed difference, let's invoke these functions on randomly generated dataset of 100 million numbers.
+Here we are generating the data using `runif()` which generates a randomly distributed vector based on a given `max` and `min` value.
 To measure the time it takes to perform the functions, we use `system.time()`
 
 ```{code-cell} r
@@ -68,11 +68,11 @@ system.time(addone_v(data))
 
 Based on the elapsed time, the loop version of took more than 11 seconds while the element-wise version took 0.232 seconds.
 
-When you are evaluating `+`, `-`, `*`, `/`, etc, operations on 2 vectors, R also performs the calculate element-wise. 
+When you are evaluating `+`, `-`, `*`, `/`, etc., operations on 2 vectors, R also performs the calculate element-wise. 
 For example when adding two vectors using `v1 + v2`, each corresponding pair of elements are added.
 The sums will form the resulting sum vector.
 
-Not that when evaluating these operations on 2 vectors, the lengths must be compatible.
+Note that when evaluating these operations on 2 vectors, the lengths must be compatible.
 If one vector is longer, the length of the longer vector must be a multiple of the shorter vector.
 For example, if the vectors `u` and `v` have lengths $n$ and $kn$ respectively, the shorter vectors elements, (`u`) will be paired multiple times.
 The element `u[1]` will be paired with `v[1]`, `v[n+1]`, `v[2n+1]` and so on. 
@@ -83,6 +83,8 @@ Here's an example:
 ```{code-cell} r
 c(1,2,3,4) + c(1,1,1,1,2,2,2,2,3,3,3,3)
 ```
+
+> As mentioned before, all scalar values are just vectors with one element. When evaluating operations between vectors and "scalars", you are actually just evaluating operations between a longer vector and a shorter vector.
 
 If the length of the longer vector is not a multiple of the shorter vector, then the expression will not evaluate.
 
@@ -118,7 +120,7 @@ variance_v <- function(vec) {
 }
 ```
 
-# Subetting
+# Subsetting
 
 There are cases where you might need to handle vector elements on a case to case basis.
 For example, let's say you need to find the sum of a vector of numbers.
@@ -157,7 +159,7 @@ If the indices do not exist, R will fetch `NA`.
 c(1,2,3,4)[c(4,9,2)]
 ```
 
-If you subset a vector with another vector of logicals, elements that line up with `TRUE` will be fetched while elements that line up with `FALSE` will be not be fetched.
+If you subset a vector with another vector of logicals, elements that line up with `TRUE` will be fetched while elements that line up with `FALSE` will not be fetched.
 
 ```{code-cell} r
 c(1,2,3,4)[c(TRUE,FALSE,FALSE,TRUE)]
@@ -175,7 +177,7 @@ If the vector of logicals is shorter than the indexed vector, R will repeat the 
 c(1,2,3,4,5,6,7)[c(TRUE,FALSE)]
 ```
 
-Going back to our sum function, we can make use of logical indexing to quickly handle negative and nonnegative numbers differently.
+Going back to our sum function, we can make use of logical indexing to quickly handle negative and non-negative numbers differently.
 
 ```{code-cell} r
 special_sum_v <- function(vec) {
@@ -185,11 +187,11 @@ special_sum_v <- function(vec) {
 }
 ```
 
-In the new function below, we first create a vector of logicals by performing a evaluating, `vec < 0`.
+In the new function below, we first create a vector of logicals by evaluating, `vec < 0`.
 Since `vec` is a vector, this is evaluated element-wise, creating a vector of logicals.
 If an element in vec is less than 0, then the corresponding logical will be `TRUE`.
 This resulting logical vector is stored to `negatives` which is then used for subsetting.
-All of the vectors fetched in the subsetting are replaced by zero, which means they will not contribute to the sum anymore.
+All the vectors fetched from subsetting are replaced by zero, which means they will not contribute to the sum anymore.
 This function will work identically as the loop version, but is much faster:
 
 ```{code-cell} r

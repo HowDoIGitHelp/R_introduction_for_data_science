@@ -1,0 +1,29 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  title: Introduction to Programming in R
+  authors:
+    - name: Rubelito Abella
+  github: HowDoIGitHelp/Lecture-Notes-and-Resources
+  bibliography:
+    - references.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: Programming_Basics_in_R.ipynb
+    - file: Compound_Classes.ipynb
+    - file: R_scripts.ipynb
+    - file: Fast_R.ipynb
+    - file: Importing_Packages_and_Data.ipynb
+    - file: Activity_1.md
+    - file: Activity_2.md
+    - file: Activity_3.md
+    - file: Activity_4.md
+    - file: Activity_5.md
+site:
+  options:
+    logo: images/logo.png
+    folders: true
+  template: book-theme

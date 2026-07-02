@@ -5,6 +5,9 @@
     <loc>http://localhost:3000</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/programming-basics-in-r</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/compound-classes</loc>
   </url>
   <url>
